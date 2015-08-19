@@ -1,29 +1,14 @@
 {
-  "name": "learnyounode",
-  "version": "2.7.1",
-  "description": "Learn You The Node.js For Much Win! An intro to Node.js via a set of self-guided workshops.",
-  "author": "Rod Vagg <rod@vagg.org> (https://github.com/rvagg)",
+  "name": "learnyoupython",
+  "version": "0.0.1",
+  "description": "Learn You The Python For Much Win! An intro to Python via a set of self-guided workshops.",
+  "author": "Gtskk <iamgtskk@gmail.com> (https://github.com/Gtskk)",
   "contributors": [
-    "Rod Vagg <r@va.gg> (https://github.com/rvagg)",
-    "Andrey Sidorov <sidorares@yandex.ru> (https://github.com/sidorares)",
-    "Julián Duque <julianduquej@gmail.com> (https://github.com/julianduque)",
-    "Lars-Magnus Skog <lars.magnus.skog@gmail.com> (https://github.com/ralphtheninja)",
-    "Tim Inman <tim.inman@gmail.com> (https://github.com/thehack)",
-    "Dan Flettre <fletd01@yahoo.com> (https://github.com/Flet)",
-    "Martin Heidegger <martin.heidegger@gmail.com> (https://github.com/martinheidegger)",
-    "Fred Chien <cfsghost@gmail.com> (https://github.com/cfsghost)",
-    "雨蒼(Billy) <billy3321@gmail.com> (https://github.com/billy3321)",
-    "Leigh Zhu <i@zhuli.me> (https://github.com/lisposter)",
-    "Toshiharu Harada <haradats@gmail.com> (https://github.com/haradats)",
-    "Lucas Fernandes da Costa <fernandesdacostalucas@gmail.com> (https://github.com/lucasfcosta)",
-    "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
-    "Alejandro Oviedo <alejandro.oviedo.g@gmail.com> (https://github.com/a0viedo)",
-    "Leonardo Nascimento <leo386386@gmail.com> (https://github.com/leonardo386)",
-    "Christophe Porteneuve <christophe@delicious-insights.com> (https://www.js-attitude.fr/node-js/)"
+    "Gtskk <iamgtskk@gmail.com> (https://github.com/Gtskk)"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rvagg/learnyounode.git"
+    "url": "https://github.com/Gtskk/learnyoupython.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -36,16 +21,19 @@
     "concat-stream": "~1.4.7",
     "duplexer": "~0.1.1",
     "hyperquest": "~1.0.1",
+    "python-shell": "^0.1.0",
     "rimraf": "~2.2.8",
+    "semver": "^5.0.1",
     "through": "~2.3.6",
     "through2": "~0.6.3",
     "through2-map": "~1.4.0",
+    "which": "^1.1.1",
     "workshopper": "~2.7.0",
     "workshopper-exercise": "~2.4.0",
     "workshopper-wrappedexec": "~0.1.1"
   },
   "bin": {
-    "learnyounode": "./learnyounode.js"
+    "learnyoupython": "./learnyoupython.js"
   },
   "preferGlobal": true
 }
