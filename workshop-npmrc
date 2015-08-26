@@ -1,0 +1,2 @@
+registry = http://192.168.102.162:7001/
+userconfig = %USERCONFIG%
