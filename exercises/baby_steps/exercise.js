@@ -1,40 +1,31 @@
 var exercise      = require('workshopper-exercise')()
-  , filecheck     = require('workshopper-exercise/filecheck')
-  , execute       = require('workshopper-exercise/execute')
-  , comparestdout = require('workshopper-exercise/comparestdout')
+	, filecheck     = require('workshopper-exercise/filecheck')
+	, execute       = require('workshopper-exercise/execute')
+	, comparestdout = require('workshopper-exercise/comparestdout')
+	, path          = require('path');
 
 
 // checks that the submission file actually exists
-exercise = filecheck(exercise)
+exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
-exercise = execute(exercise)
+exercise = execute(exercise);
 
 // compare stdout of solution and submission
-exercise = comparestdout(exercise)
-
-
-// generate a random positive integer <= 100
-
-function rndint () {
-  return Math.ceil(Math.random() * 100)
-}
+exercise = comparestdout(exercise);
 
 
 exercise.addSetup(function (mode, callback) {
-  // mode == 'run' || 'verify'
+	// mode == 'run' || 'verify'
 
-  // create a random batch of cmdline args
-  var args = [ rndint(), rndint() ]
+	// supply the args to the 'execute' processor for both
+	// solution and submission spawn()
+	this.submissionArgs = this.submission;
+	this.solutionArgs = this.solution.replace(/\.js/, '.py');
 
-  while (Math.random() > 0.3)
-    args.push(rndint())
+	this.submissionCommand = [ 'run-verify.js' ].concat(this.submissionArgs);
 
-  // supply the args to the 'execute' processor for both
-  // solution and submission spawn()
-  this.submissionArgs = this.solutionArgs = args
+	process.nextTick(callback);
+});
 
-  process.nextTick(callback)
-})
-
-module.exports = exercise
+module.exports = exercise;
