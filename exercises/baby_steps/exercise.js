@@ -23,7 +23,7 @@ exercise.addSetup(function (mode, callback) {
 	this.submissionArgs = this.submission;
 	this.solutionArgs = this.solution.replace(/\.js/, '.py');
 
-	this.submissionCommand = [ 'run-verify.js' ].concat(this.submissionArgs);
+	this.submissionCommand = [ this.solution ].concat(this.submissionArgs);
 
 	process.nextTick(callback);
 });
