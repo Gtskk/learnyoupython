@@ -1,8 +1,7 @@
 var exercise      = require('workshopper-exercise')()
 	, filecheck     = require('workshopper-exercise/filecheck')
 	, execute       = require('workshopper-exercise/execute')
-	, comparestdout = require('workshopper-exercise/comparestdout')
-	, path          = require('path');
+	, comparestdout = require('workshopper-exercise/comparestdout');
 
 
 // checks that the submission file actually exists

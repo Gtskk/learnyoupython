@@ -10,7 +10,6 @@ d['no'] = 4
 for key in d:
 	print(key, d[key])
 
-
 */
 
 /* 此处为处理程序，可忽略 */

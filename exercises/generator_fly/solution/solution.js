@@ -1,15 +1,13 @@
 /**
 // 参考答案
 
-from collections import OrderedDict
-d = OrderedDict()
-d['foo'] = 1
-d['bar'] = 2
-d['yes'] = 3
-d['no'] = 4
-for key in d:
-	print(key, d[key])
-
+portfolio = [
+    {'name':'GOOG', 'shares': 50},
+    {'name':'YHOO', 'shares': 75},
+    {'name':'AOL', 'shares': 20},
+    {'name':'SCOX', 'shares': 65}
+]
+print(min(s['shares'] for s in portfolio))
 
 */
 
