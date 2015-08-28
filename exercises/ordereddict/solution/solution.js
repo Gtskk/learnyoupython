@@ -1,12 +1,16 @@
 /**
 // 参考答案
 
+import sys
 from collections import OrderedDict
+
 d = OrderedDict()
-d['foo'] = 1
-d['bar'] = 2
-d['yes'] = 3
-d['no'] = 4
+record = []
+if len(sys.argv) > 1:
+	for ele in sys.argv[1:]:
+		arr = ele.split(':')
+		d[arr[0]] = arr[1]
+
 for key in d:
 	print(key, d[key])
 
@@ -23,6 +27,7 @@ var file = process.argv[2],
 PythonShell.run(filename, {
 	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
+	args: ['foo:1', 'bar:2', 'yes:3', 'no:4']
 },function(err, results) {
 	if (err) throw err;
 	// results is an array consisting of messages collected during execution 

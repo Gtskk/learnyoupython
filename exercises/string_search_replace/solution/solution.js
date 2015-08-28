@@ -1,16 +1,17 @@
 /**
 // 参考答案
 
-import sys
+from calendar import month_abbr
+import re
 
-record = []
-if len(sys.argv) > 1:
-	for ele in sys.argv[1:]:
-		record.append(ele)
+datepat = re.compile(r'(\d+)/(\d+)/(\d+)')
+text = 'Today is 8/28/2015. Tomorrow is 8/29/2015.'
 
-name, eamil, *numbers = record
-print(numbers)
+def change_date(m):
+	mon_name = month_abbr[int(m.group(1))]
+	return '{} {} {}'.format(m.group(2), mon_name, m.group(3))
 
+print(datepat.sub(change_date, text))
 
 */
 
@@ -25,7 +26,7 @@ var file = process.argv[2],
 PythonShell.run(filename, {
 	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
-	args: ['Dave', 'dave@example.com', '773-555-1212', '847-555-1212']
+	args: ['Today is 8/28/2015. Tomorrow is 8/29/2015.']
 },function(err, results) {
 	if (err) throw err;
 	// results is an array consisting of messages collected during execution 

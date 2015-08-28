@@ -1,8 +1,12 @@
+import sys
 from collections import OrderedDict
+
 d = OrderedDict()
-d['foo'] = 1
-d['bar'] = 2
-d['yes'] = 3
-d['no'] = 4
+record = []
+if len(sys.argv) > 1:
+	for ele in sys.argv[1:]:
+		arr = ele.split(':')
+		d[arr[0]] = arr[1]
+
 for key in d:
 	print(key, d[key])

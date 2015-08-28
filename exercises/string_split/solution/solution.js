@@ -18,6 +18,7 @@ var file = process.argv[2],
 PythonShell.run(filename, {
 	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
+	args: ['asdf fjdk; afed, fjek,asdf, foo']
 },function(err, results) {
 	if (err) throw err;
 	// results is an array consisting of messages collected during execution 
