@@ -1,6 +1,6 @@
 # Learn You The Python For Much Win!
 
-![Learn You The Python For Much Win!](https://raw.github.com/rvagg/learnyounode/master/learnyoupython.png)
+![Learn You The Python For Much Win!](https://raw.githubusercontent.com/Gtskk/learnyoupython/master/learnyoupython.png)
 
   1. Install [Node.js](http://nodejs.org/)
   2. Run `sudo npm install learnyoupython -g`
