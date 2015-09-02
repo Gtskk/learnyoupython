@@ -6,7 +6,8 @@
     "ORDEREDDICT": "字典顺序保持",
     "GENERATOR FLY": "生成器助你飞翔",
     "STRING SPLIT": "字符串分割",
-    "STRING SEARCH REPLACE": "字符串搜索和替换"
+    "STRING SEARCH REPLACE": "字符串搜索和替换",
+    "ITERATOR": "迭代器"
   },
   "menu": {
     "credits": "鸣谢"

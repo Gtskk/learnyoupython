@@ -24,7 +24,6 @@ var file = process.argv[2],
 	filename = path.basename(file);
 
 PythonShell.run(filename, {
-	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
 	args: ['Today is 8/28/2015. Tomorrow is 8/29/2015.']
 },function(err, results) {

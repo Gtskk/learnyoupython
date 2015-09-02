@@ -1,26 +1,24 @@
-Create a program that prints a list of files in a given directory, filtered by the extension of the files. You will be provided a directory name as the first argument to your program (e.g. '/path/to/dir/') and a file extension to filter by as the second argument.
+# **Sorry. English will be ok soon.**
 
-For example, if you get 'txt' as the second argument then you will need to filter the list to only files that **end with .txt**. Note that the second argument _will not_ come prefixed with a '.'.
+# 使用多个界定符分割字符串
 
-The list of files should be printed to the console, one file per line. You **must** use asynchronous I/O.
+你需要将一个字符串分割为多个字段，但是分隔符(还有周围的空格)并不是固定的。
 
 ----------------------------------------------------------------------
-## HINTS
+## 提示
 
-The `fs.readdir()` method takes a pathname as its first argument and a callback as its second. The callback signature is:
+string对象的`split()`方法只适应于非常简单的字符串分割情形， 它并不允许有多个分隔符或者是分隔符周围不确定的空格。 
+当你需要更加灵活的切割字符串的时候，最好使用`re.split()`方法：
 
-```js
-function callback (err, list) { /* ... */ }
+----------------------------------------------------------------------
+## 挑战
+
+将如下字符串分割为多个字段：
+
+```python
+str = 'asdf fjdk; afed, fjek,asdf, foo'
 ```
+字符串是`sys.argv`索引为1的值
 
-where `list` is an array of filename strings.
-
-Documentation on the `fs` module can be found by pointing your browser here:
-  {rootdir:/node_apidoc/fs.html}
-
-You may also find node's `path` module helpful, particularly the `extname` method.
-
-Documentation on the `path` module can be found by pointing your browser here:
-  {rootdir:/node_apidoc/path.html}
-
+预期结果：['asdf', 'fjdk', 'afed', 'fjek', 'asdf', 'foo']
 ----------------------------------------------------------------------

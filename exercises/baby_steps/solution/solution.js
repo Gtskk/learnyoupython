@@ -23,7 +23,6 @@ var file = process.argv[2],
 	filename = path.basename(file);
 
 PythonShell.run(filename, {
-	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
 	args: ['Dave', 'dave@example.com', '773-555-1212', '847-555-1212']
 },function(err, results) {

@@ -1,3 +1,9 @@
-record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
+import sys
+
+record = []
+if len(sys.argv) > 1:
+	for ele in sys.argv[1:]:
+		record.append(ele)
+
 name, eamil, *numbers = record
 print(numbers)

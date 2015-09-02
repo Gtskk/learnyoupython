@@ -1,29 +1,48 @@
-Write a program that performs an HTTP GET request to a URL provided to you as the first command-line argument. Write the String contents of **each** "data" event from the response to a new line on the console (stdout).
+# **Sorry. English will be ok soon.**
+
+# 字符串搜索和替换
+
+你想在字符串中搜索和匹配指定的文本模式
 
 ----------------------------------------------------------------------
-## HINTS
+## 提示
 
-For this exercise you will need to use the `http` core module.
-
-Documentation on the `http` module can be found by pointing your browser here:
-  {rootdir:/node_apidoc/http.html}
-
-The `http.get()` method is a shortcut for simple GET requests, use it to simplify your solution. The first argument to `http.get()` can be the URL you want to GET; provide a callback as the second argument.
-
-Unlike other callback functions, this one has the signature:
-
-```js
-function callback (response) { /* ... */ }
+对于简单的字面模式，直接使用 str.repalce() 方法即可，比如：
+```python
+>>> text = 'yeah, but no, but yeah, but no, but yeah'
+>>> text.replace('yeah', 'yep')
+'yep, but no, but yep, but no, but yep'
+>>>
 ```
 
-Where the `response` object is a Node **Stream** object. You can treat Node Streams as objects that emit events. The three events that are of most interest are: "data", "error" and "end". You listen to an event like so:
+对于复杂的模式，请使用re模块中的 sub() 函数。 
 
-```js
-response.on("data", function (data) { /* ... */ })
+为了说明这个，假设你想将形式为”11/27/201”的日期字符串改成”2012-11-27”。示例如下：
+
+```python
+>>> text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
+>>> import re
+>>> re.sub(r'(\d+)/(\d+)/(\d+)', r'\3-\1-\2', text)
+'Today is 2012-11-27. PyCon starts 2013-3-13.'
+>>>
 ```
 
-The "data" event is emitted when a chunk of data is available and can be processed. The size of the chunk depends upon the underlying data source.
+sub() 函数中的第一个参数是被匹配的模式，第二个参数是替换模式。反斜杠数字比如3指向前面模式的捕获组号。
 
-The `response` object / Stream that you get from `http.get()` also has a `setEncoding()` method. If you call this method with "utf8", the "data" events will emit Strings rather than the standard Node `Buffer` objects which you have to explicitly convert to Strings.
+如果你打算用相同的模式做多次替换，考虑先编译它来提升性能。比如：
 
+对于更加复杂的替换，可以传递一个替换回调函数来代替。
+
+对于下面的挑战，你也会用到`calendar`模块的`month_abbr`
+
+----------------------------------------------------------------------
+## 挑战
+
+将下述字符串中的月份替换成英文月份的格式，字符串可以通过sys.argv[1]获得
+
+```python
+text = 'Today is 8/28/2015. Tomorrow is 8/29/2015.'
+```
+
+预期结果：`'Today is 28 Aug 2015. PyCon starts 29 Aug 2015.'`
 ----------------------------------------------------------------------

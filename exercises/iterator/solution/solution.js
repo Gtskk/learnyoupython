@@ -2,17 +2,21 @@
 // 参考答案
 
 import sys
-from collections import OrderedDict
 
-d = OrderedDict()
-record = []
-if len(sys.argv) > 1:
-	for ele in sys.argv[1:]:
-		arr = ele.split(':')
-		d[arr[0]] = arr[1]
+word_summary = []
 
-for key in d:
-	print(key, d[key])
+with open(sys.argv[1], 'r') as f:
+    lines = f.readlines()
+
+for idx, line in enumerate(lines):
+    # Create a list of words in current line
+    words = [w.strip().lower() for w in line.split()]
+    for word in words:
+    	if word == 'gtskk':
+    		word_summary.append(idx)
+
+print(word_summary)
+
 
 */
 
@@ -26,7 +30,7 @@ var file = process.argv[2],
 
 PythonShell.run(filename, {
 	scriptPath: dir,
-	args: ['foo:1', 'bar:2', 'yes:3', 'no:4']
+	args: [__dirname + '/../iterator.txt']
 },function(err, results) {
 	if (err) throw err;
 	// results is an array consisting of messages collected during execution 

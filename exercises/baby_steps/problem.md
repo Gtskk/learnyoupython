@@ -1,32 +1,37 @@
-Write a program that accepts one or more numbers as command-line arguments and prints the sum of those numbers to the console (stdout).
+# **Sorry. English will be ok soon.**
+
+# 解压可迭代对象赋值给多个变量
+
+如果一个可迭代对象的元素个数超过变量个数时，会出现”太多解压值”的异常。 那么怎样才能从这个可迭代对象中解压出N个元素出来？
 
 ----------------------------------------------------------------------
-## HINTS
+## 提示
 
-You can access command-line arguments via the global `process` object. The `process` object has an `argv` property which is an array containing the complete command-line. i.e. `process.argv`.
+Python的星号表达式可以用来解决这个问题。比如，你在学习一门课程，在学期末的时候，
+ 你想统计下家庭作业的平均成绩，但是排除掉第一个和最后一个分数。如果只有四个分数
+ ，你可能就直接去简单的手动赋值， 但如果有24个呢？
 
-To get started, write a program that simply contains:
+这时候星号表达式就派上用场了：	
 
-```js
-console.log(process.argv)
+```python
+ def drop_first_last(grades):
+ 	first, *middle, last = grades
+ 	return avg(middle)
 ```
-
-Run it with `node program.js` and some numbers as arguments. e.g:
-
-```sh
-$ node program.js 1 2 3
-```
-
-In which case the output would be an array looking something like:
-
-```js
-[ 'node', '/path/to/your/program.js', '1', '2', '3' ]
-```
-
-You'll need to think about how to loop through the number arguments so  you can output just their sum. The first element of the process.argv array is always 'node', and the second element is always the path to your program.js file, so you need to start at the 3rd element (index 2), adding each item to the total until you reach the end of the array.
-
-Also be aware that all elements of `process.argv` are strings and you may need to *coerce* them into numbers. You can do this by prefixing the property with `+` or passing it to `Number()`. e.g. `+process.argv[2]` or `Number(process.argv[2])`.
-
-{appname} will be supplying arguments to your program when you run `{appname} verify program.js` so you don't need to supply them yourself. To test your program without verifying it, you can invoke it with `{appname} run program.js`. When you use `run`, you are invoking the test environment that {appname} sets up for each exercise.
 
 ----------------------------------------------------------------------
+## 挑战
+假设你现在有一条包含一个名字、邮件，接着就是不确定数量的电话号码的记录，请取出里面的电话号码列表。
+记录可以通过sys.argv去收集获得
+
+记录的格式如下：:
+```python
+ >>> record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
+```
+
+你应该获得`['773-555-1212', '847-555-1212']`
+
+{appname} 会在你执行 `{appname} verify program.js` 的时候提供参数给你的程序，所以你不需要自己去加参数了。如果仅仅只是想测试一下，而不想验证验证你的答案，你可以通过输入 `{appname} run program.js` 来测试。当你使用 `run` 的时候，{appname} 会进入它各个练习所准备的测试环境。
+
+----------------------------------------------------------------------
+

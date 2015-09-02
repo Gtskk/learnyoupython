@@ -20,7 +20,6 @@ var file = process.argv[2],
 	filename = path.basename(file);
 
 PythonShell.run(filename, {
-	pythonPath: 'D:\\software\\python34\\python3.exe',
 	scriptPath: dir,
 },function(err, results) {
 	if (err) throw err;
