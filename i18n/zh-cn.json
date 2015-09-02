@@ -1,6 +1,6 @@
 {
   "title": "教你玩转 Python3，赢取更多机会",
-  "subtitle": "\u001b[23m选择一个题目，按 \u001b[3m回车\u001b[23m 开始（请使用Python3）",
+  "subtitle": "\u001b[23m选择一个题目，按 \u001b[3m回车\u001b[23m 开始（使用前务必安装Python3，并添加到环境变量）",
   "exercise": {
     "BABY STEPS": "婴儿学步",
     "ORDEREDDICT": "字典顺序保持",

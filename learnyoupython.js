@@ -13,6 +13,7 @@ workshopper({
 	appDir      : __dirname,
 	languages   : ['zh-cn', 'en'],
 	helpFile    : fpath('./i18n/help/{lang}.txt'),
+	width       : 75,
 	menuItems   : [{
 		name    : 'credits',
 		handler : credits
